@@ -1,4 +1,4 @@
-class UILoadIns {
+export class UILoadIns {
     public static readonly __instance__: UILoadIns = new UILoadIns();
     private constructor() {
     }
@@ -17,4 +17,3 @@ class UILoadIns {
 }
 
 
-export const uiload = UILoadIns.__instance__;

@@ -86,8 +86,9 @@ import { UIUtils, UIContainer } from "./BaseUI";
 
         // 界面销毁, 子类也有此方法需要执行 super.onDestroy()
         public onDestroy() {
-            this.sendEvent(vsdk.VIEW_DESTROY_NOTI);
+            this.sendEvent(vconst.VIEW_DESTROY_NOTI);
         }
+        
     }
 
 // }

@@ -16,6 +16,7 @@ import { vctrl } from "../VCtrl";
         public abstract init(data ? : any): void;
 
 
+
         /** 2.视图显示后会调用的接口
          * @override
          */
@@ -35,7 +36,7 @@ import { vctrl } from "../VCtrl";
         }
 
         public __viewFinish__(): void {
-            this.bindEvent(vsdk.VIEW_DESTROY_NOTI, function(data: any){
+            this.bindEvent(vconst.VIEW_DESTROY_NOTI, function(data: any){
                 this.viewDestroy();
             }, this);
         }

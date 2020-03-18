@@ -2,7 +2,7 @@
  * 
  */
 
-namespace vsdk {
+namespace vconst {
     // 1.BaseView销毁发送事件告诉VMediator
     export let VIEW_DESTROY_NOTI: string = 'view_destroy_noti'; 
 
@@ -24,8 +24,9 @@ namespace vsdk {
         // public FIT_WIDTH: boolean = true;
         public START_SCENE: string = 'START_SCENE';
     }
+
+
     export let cfg: vcfgIns = new vcfgIns();
-    
 }
 
-window['vsdk'] = vsdk;
+window['vconst'] = vconst;

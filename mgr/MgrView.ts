@@ -25,7 +25,8 @@ import { BaseView } from "../base/BaseView";
         private _layerViewList: VMediator[];
 
 
-        private _handleView(Mediator: { new(): VMediator }, View: { new(): BaseView }, viewNode: cc.Node, data?: any, option?: vsdk.OPEN_VIEW_OPTION, zOrder?: number): void {
+        
+        private _handleView(Mediator: { new(): VMediator }, View: { new(): BaseView }, viewNode: cc.Node, data?: any, option?: vconst.OPEN_VIEW_OPTION, zOrder?: number): void {
             let canvas: cc.Node = cc.director.getScene().getChildByName('Canvas');
             if (!canvas) {
                 msdk.mlog.error('2.场景中必须包含默认的Canvas节点！');
@@ -38,9 +39,9 @@ import { BaseView } from "../base/BaseView";
             this._bindViewMediator(vmediator, View, viewNode, data);
 
             // 根据不同打开类型，存储到不同队列中。
-            if (option === vsdk.OPEN_VIEW_OPTION.OVERLAY || option === vsdk.OPEN_VIEW_OPTION.SINGLE) {
+            if (option === vconst.OPEN_VIEW_OPTION.OVERLAY || option === vconst.OPEN_VIEW_OPTION.SINGLE) {
                 this._popViewList.push(vmediator);
-            } else if (option === vsdk.OPEN_VIEW_OPTION.LAYER) {
+            } else if (option === vconst.OPEN_VIEW_OPTION.LAYER) {
                 this._layerViewList.push(vmediator);
             }
         }
@@ -88,7 +89,7 @@ import { BaseView } from "../base/BaseView";
             // 处理场景显示逻辑
             let scenePath: string = (<any>(View)).path();
             
-            if (scenePath === vsdk.cfg.START_SCENE) {
+            if (scenePath === vconst.cfg.START_SCENE) {
                 this.__closeAllView__();
                 this._handleScene(Mediator, View, data);
                 cb && cb();
@@ -145,7 +146,7 @@ import { BaseView } from "../base/BaseView";
          * @param {number} zOrder 层级。
          * @param {()=>void} cb 加载完成回调.
          */
-        public __showView__(Mediator: { new(): VMediator }, View: { new(): BaseView }, data?: any, option?: vsdk.OPEN_VIEW_OPTION, zOrder?: number, cb?: () => void): void {
+        public __showView__(Mediator: { new(): VMediator }, View: { new(): BaseView }, data?: any, option?: vconst.OPEN_VIEW_OPTION, zOrder?: number, cb?: () => void): void {
             // 处理打开UI的其他操作
             this._openViewOptionHandler(option);
 
@@ -169,7 +170,7 @@ import { BaseView } from "../base/BaseView";
         }
 
 
-        public __showLayer__(mediator: { new(): VMediator }, View: { new(): BaseView }, data?: any, option?: vsdk.OPEN_VIEW_OPTION, zOrder?: number, cb?: () => void): void {
+        public __showLayer__(mediator: { new(): VMediator }, View: { new(): BaseView }, data?: any, option?: vconst.OPEN_VIEW_OPTION, zOrder?: number, cb?: () => void): void {
             this.__showView__(mediator, View, data, option, zOrder, cb);
         }
 
@@ -235,13 +236,13 @@ import { BaseView } from "../base/BaseView";
          * @param option
          * @private
          */
-        private _openViewOptionHandler(option: vsdk.OPEN_VIEW_OPTION): void {
+        private _openViewOptionHandler(option: vconst.OPEN_VIEW_OPTION): void {
             // 设置默认值
             if (!option) {
-                option = vsdk.OPEN_VIEW_OPTION.OVERLAY;
+                option = vconst.OPEN_VIEW_OPTION.OVERLAY;
             }
             // 根据不同操作做不同处理
-            if (option === vsdk.OPEN_VIEW_OPTION.SINGLE) {
+            if (option === vconst.OPEN_VIEW_OPTION.SINGLE) {
                 // TODO:暂时不提供这种关闭其他view的打开方式，可以通过BaseView.closeAllPopView()来实现。
             }
         }

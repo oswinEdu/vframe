@@ -1,5 +1,5 @@
 
-class VUtilsIns {
+export class VUtilsIns {
     public static readonly __instance__: VUtilsIns = new VUtilsIns();
     private constructor() {
     }
@@ -21,6 +21,3 @@ class VUtilsIns {
         return cc.color(r, g, b);
     }
 }
-
-
-export const vutils = VUtilsIns.__instance__;

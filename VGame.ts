@@ -13,6 +13,12 @@ class VGameIns {
     }
 
 
+    
+    /**
+     * 设置设计分辨率
+     * 
+     * @memberof VGameIns
+     */
     public setResolutionPolicy(): void {
         let SET_W: number = 1280;
         let SET_H: number = 720;

@@ -1,5 +1,5 @@
 
-class VGameIns {
+export class VGameIns {
     public static readonly __instance__: VGameIns = new VGameIns();
     private constructor() {
     }
@@ -13,6 +13,11 @@ class VGameIns {
     }
 
 
+    /**
+     * 设置设计分辨率
+     * 
+     * @memberof VGameIns
+     */
     public setResolutionPolicy(): void {
         let SET_W: number = 1280;
         let SET_H: number = 720;
@@ -41,4 +46,3 @@ class VGameIns {
     }
 }
 
-export const vgame = VGameIns.__instance__;

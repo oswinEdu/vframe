@@ -1,8 +1,7 @@
-class VText {
-    public static readonly __instance__: VText = new VText();
+export  class VTextIns {
+    public static readonly __instance__: VTextIns = new VTextIns();
     private constructor() {
     }
 
 }
 
-export const vtext = VText.__instance__;

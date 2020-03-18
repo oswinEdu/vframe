@@ -1,5 +1,5 @@
-class VAction {
-    public static readonly __instance__: VAction = new VAction();
+export class VActionIns {
+    public static readonly __instance__: VActionIns = new VActionIns();
     private constructor() {
     }
 
@@ -35,5 +35,3 @@ class VAction {
         node.runAction(seq2);
     }
 }
-
-export const vaction = VAction.__instance__;

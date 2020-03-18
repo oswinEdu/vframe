@@ -1,5 +1,5 @@
 
-class VUIIns {
+export class VUIIns {
     public static readonly __instance__: VUIIns = new VUIIns();
     private constructor() {
     }
@@ -8,4 +8,3 @@ class VUIIns {
 }
 
 
-export const vui = VUIIns.__instance__;

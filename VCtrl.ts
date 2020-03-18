@@ -3,35 +3,11 @@ import { VMediator } from "./base/VMediator";
 import { VScene } from "./base/VScene";
 import { BaseView } from "./base/BaseView";
 
-class VCtrlIns {
+export class VCtrlIns {
     public static readonly __instance__: VCtrlIns = new VCtrlIns();
     private constructor() {
     }
-<<<<<<< HEAD
-
-    // 框架是否被初始化
-    private static _isInit: boolean = false;
-
     
-    /**
-     * 初始化框架配置 onload 初始化
-     * @param {boolean} debug 是否是调试状态
-     * @param {cc.Size} designResolution 设计分辨率
-     * @param {boolean} fitHeight 是否高适配
-     * @param {boolean} fitWidth 是否宽适配
-     */
-    public init(debug: boolean): void {
-        if (VCtrlIns._isInit) {
-            console.warn("框架已经初始化，不需要重复初始化。");
-            return;
-        }
-
-        VCtrlIns._isInit = true;
-        vconst.cfg.DEBUG = debug;
-    }
-    
-
-=======
 
     // 框架是否被初始化
     private static _isInit: boolean = false;
@@ -54,7 +30,6 @@ class VCtrlIns {
         vconst.cfg.DEBUG = debug;
     }
 
->>>>>>> 5cb34a599020eac025b8cc2795306cb7c86e3c65
 
     /**
      * 运行场景
@@ -133,5 +108,3 @@ class VCtrlIns {
         return msdk.mgrModel.getModel(model);
     }
 }
-
-export const vctrl = VCtrlIns.__instance__;

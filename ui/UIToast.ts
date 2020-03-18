@@ -1,4 +1,4 @@
-class UIToastIns {
+export class UIToastIns {
     public static readonly __instance__: UIToastIns = new UIToastIns();
     private constructor() {
     }
@@ -20,6 +20,3 @@ class UIToastIns {
     }
 
 }
-
-
-export const uitoast = UIToastIns.__instance__;

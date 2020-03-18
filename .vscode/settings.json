@@ -1,0 +1,9 @@
+{
+    "editor.wordWrap": "on",
+    "files.exclude": {
+        "**/.git": true,
+        
+        //  忽略所有xxx.meta文件
+        "**/*.meta": true,
+    }
+}

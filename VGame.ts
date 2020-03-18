@@ -1,5 +1,5 @@
 
-class VGameIns {
+export class VGameIns {
     public static readonly __instance__: VGameIns = new VGameIns();
     private constructor() {
     }
@@ -11,7 +11,6 @@ class VGameIns {
             }, 1000);
         });
     }
-
 
     
     /**
@@ -47,4 +46,3 @@ class VGameIns {
     }
 }
 
-export const vgame = VGameIns.__instance__;

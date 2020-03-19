@@ -1,6 +1,6 @@
 import { BaseView} from "./BaseView";
 import { VScene } from "./VScene";
-import { vins } from "../tools/vins";
+import { vins } from "../vins";
 
 
 export abstract class VMediator  extends msdk.BaseMediator {
@@ -58,7 +58,7 @@ export abstract class VMediator  extends msdk.BaseMediator {
      * @param data {Object} data 自定义的任意类型透传数据。（可选）
      */
     public runScene(mediator: { new(): VMediator }, view: { new(): VScene}, data?: any): void {
-        vins.ctrl.runScene(mediator, view, data);
+        vins.frame.runScene(mediator, view, data);
     }
 
 
@@ -66,7 +66,7 @@ export abstract class VMediator  extends msdk.BaseMediator {
      * @returns {boolean}是否存在上一个场景
      */
     public backScene(): boolean {
-        return vins.ctrl.backScene();
+        return vins.frame.backScene();
     }
 
 
@@ -76,7 +76,7 @@ export abstract class VMediator  extends msdk.BaseMediator {
      * @param {Object} data 自定义的任意类型透传数据。（可选）
      */
     public popView(mediator: {new(): VMediator }, view: { new(): BaseView}, data?: any): void {
-        vins.ctrl.popView(mediator, view, data);
+        vins.frame.popView(mediator, view, data);
     }
 
 
@@ -87,7 +87,7 @@ export abstract class VMediator  extends msdk.BaseMediator {
      * @param {Object} data 自定义的任意类型透传数据。（可选）
      */
     public addLayer(mediator: { new(): VMediator}, view: { new(): BaseView }, zOrder?: number, data?: any): void {
-        vins.ctrl.addLayer(mediator, view, zOrder, data);
+        vins.frame.addLayer(mediator, view, zOrder, data);
     }
 
 

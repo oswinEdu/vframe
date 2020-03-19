@@ -1,5 +1,5 @@
-export class UILoadIns {
-    public static readonly __instance__: UILoadIns = new UILoadIns();
+export class VLoadIns {
+    public static readonly __instance__: VLoadIns = new VLoadIns();
     private constructor() {
     }
 

@@ -1,16 +1,16 @@
-import { mgrView } from "./mgr/MgrView";
-import { VMediator } from "./base/VMediator";
-import { VScene } from "./base/VScene";
-import { BaseView } from "./base/BaseView";
+import { mgrView } from "../mgr/MgrView";
+import { VMediator } from "../base/VMediator";
+import { VScene } from "../base/VScene";
+import { BaseView } from "../base/BaseView";
 
-export class VCtrlIns {
-    public static readonly __instance__: VCtrlIns = new VCtrlIns();
+export class MgrFrameIns {
+    public static readonly __instance__: MgrFrameIns = new MgrFrameIns();
     private constructor() {
     }
     
 
     // 框架是否被初始化
-    private static _isInit: boolean = false;
+    private _isInit: boolean = false;
 
     
     /**
@@ -21,12 +21,12 @@ export class VCtrlIns {
      * @param {boolean} fitWidth 是否宽适配
      */
     public init(debug: boolean): void {
-        if (VCtrlIns._isInit) {
+        if (this._isInit) {
             console.warn("框架已经初始化，不需要重复初始化。");
             return;
         }
 
-        VCtrlIns._isInit = true;
+        this._isInit = true;
         vconst.cfg.DEBUG = debug;
     }
 
@@ -39,7 +39,7 @@ export class VCtrlIns {
      * @param {()=>void} cb 加载完成回调.
      */
     public runScene(mediator: { new(): VMediator }, view: { new(): VScene}, data?: any, cb?:()=> void): void {
-        if (VCtrlIns._isInit) {
+        if (this._isInit) {
             mgrView.__runScene__(mediator, view, data, cb);
         } else {
             console.warn("框架没有初始化，请先调用init接口进行初始化。");

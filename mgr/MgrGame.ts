@@ -1,6 +1,6 @@
 
-export class VGameIns {
-    public static readonly __instance__: VGameIns = new VGameIns();
+export class MgrGameIns {
+    public static readonly __instance__: MgrGameIns = new MgrGameIns();
     private constructor() {
     }
 

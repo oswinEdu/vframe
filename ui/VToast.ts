@@ -1,5 +1,5 @@
-export class UIToastIns {
-    public static readonly __instance__: UIToastIns = new UIToastIns();
+export class VToastIns {
+    public static readonly __instance__: VToastIns = new VToastIns();
     private constructor() {
     }
 

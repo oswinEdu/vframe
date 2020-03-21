@@ -1,5 +1,5 @@
 import { LoginScene } from "../view/login/LoginScene";
-import { LoginMediator } from "../view/login/LoginMediator";
+// import { LoginMediator } from "../view/login/LoginMediator";
 import { vins } from "./vins";
 
 
@@ -13,7 +13,7 @@ export class VStart extends cc.Component {
 
         // 1.初始化框架
         vins.frame.init(false);
-        vins.frame.runScene(LoginMediator, LoginScene, '');
+        // vins.frame.runScene(LoginMediator, LoginScene, '');
 
         // 2.注册model
         // vctrl.registerModel(OneModel);

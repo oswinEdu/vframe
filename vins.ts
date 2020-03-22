@@ -15,12 +15,14 @@ import { VDialogIns } from "./ui/VDialog";
 import { VTextIns } from "./ui/VText";
 import { VUIIns } from "./ui/VUI";
 
-import { VScene } from "./base/VScene";
+// import { VScene } from "./base/VScene";
+// import { VMediator } from "./base/VMediator";
+// import { VLayer } from "./base/VLayer";
+// import { VView } from "./base/VView";
+
 
 export class vins {
     private constructor(){}
-
-    static scene : {new(): VScene};
 
 
     static game         = MgrGameIns.__instance__;
@@ -35,3 +37,4 @@ export class vins {
     static text         = VTextIns.__instance__;
     static ui           = VUIIns.__instance__;
 }
+
